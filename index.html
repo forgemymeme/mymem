@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForgeMyMeme</title>
+    <script>
+        const translations = {
+            en: {
+                title: "ForgeMyMeme",
+                tagline: "Welcome to ForgeMyMeme!",
+                home: "Home",
+                about: "About Us",
+                gallery: "Gallery",
+                submit: "Send Request",
+                contact: "Contact",
+                welcome: "Welcome to ForgeMyMeme! The best source for unique and funny memes.",
+                aboutText: "We are a creative team making memes based on current trends and personal ideas. Follow us on Instagram or send us your ideas!",
+                galleryText: "Gallery",
+                submitText: "Send Request via Instagram",
+                footer: "All rights reserved.",
+                instagramFollow: "Follow us on Instagram",
+                tiktokFollow: "Follow us on TikTok"
+            },
+            de: {
+                title: "ForgeMyMeme",
+                tagline: "Willkommen bei ForgeMyMeme!",
+                home: "Home",
+                about: "Über Uns",
+                gallery: "Galerie",
+                submit: "Anfrage senden",
+                contact: "Kontakt",
+                welcome: "Willkommen bei ForgeMyMeme! Die beste Quelle für einzigartige und witzige Memes.",
+                aboutText: "Wir sind ein kreatives Team, das Memes zu aktuellen Trends und persönlichen Ideen erstellt. Folge uns auf Instagram oder schicke uns deine Ideen!",
+                galleryText: "Galerie",
+                submitText: "Anfrage über Instagram senden",
+                footer: "Alle Rechte vorbehalten.",
+                instagramFollow: "Folge uns auf Instagram",
+                tiktokFollow: "Folge uns auf TikTok"
+            },
+            es: {
+                title: "ForgeMyMeme",
+                tagline: "¡Bienvenido a ForgeMyMeme!",
+                home: "Inicio",
+                about: "Sobre nosotros",
+                gallery: "Galería",
+                submit: "Enviar solicitud",
+                contact: "Contacto",
+                welcome: "¡Bienvenido a ForgeMyMeme! La mejor fuente de memes únicos y divertidos.",
+                aboutText: "Somos un equipo creativo que crea memes sobre tendencias actuales e ideas personales. ¡Síguenos en Instagram o envíanos tus ideas!",
+                galleryText: "Galería",
+                submitText: "Enviar solicitud por Instagram",
+                footer: "Todos los derechos reservados.",
+                instagramFollow: "Síguenos en Instagram",
+                tiktokFollow: "Síguenos en TikTok"
+            },
+            fr: {
+                title: "ForgeMyMeme",
+                tagline: "Bienvenue chez ForgeMyMeme!",
+                home: "Accueil",
+                about: "À propos de nous",
+                gallery: "Galerie",
+                submit: "Envoyer une demande",
+                contact: "Contact",
+                welcome: "Bienvenue chez ForgeMyMeme! La meilleure source de mèmes uniques et drôles.",
+                aboutText: "Nous sommes une équipe créative qui crée des mèmes basés sur les tendances actuelles et les idées personnelles. Suivez-nous sur Instagram ou envoyez-nous vos idées!",
+                galleryText: "Galerie",
+                submitText: "Envoyer une demande via Instagram",
+                footer: "Tous droits réservés.",
+                instagramFollow: "Suivez-nous sur Instagram",
+                tiktokFollow: "Suivez-nous sur TikTok"
+            }
+        };
+
+        function setLanguage(lang) {
+            const langData = translations[lang] || translations['en'];
+            document.querySelector("title").innerText = langData.title;
+            document.getElementById("tagline").innerText = langData.tagline;
+            document.getElementById("homeLink").innerText = langData.home;
+            document.getElementById("aboutLink").innerText = langData.about;
+            document.getElementById("galleryLink").innerText = langData.gallery;
+            document.getElementById("submitLink").innerText = langData.submit;
+            document.getElementById("contactLink").innerText = langData.contact;
+            document.getElementById("welcomeText").innerText = langData.welcome;
+            document.getElementById("aboutText").innerText = langData.aboutText;
+            document.getElementById("galleryTitle").innerText = langData.galleryText;
+            document.getElementById("submitTitle").innerText = langData.submitText;
+            document.getElementById("footerText").innerText = langData.footer;
+            document.getElementById("instagramFollow").innerText = langData.instagramFollow;
+            document.getElementById("tiktokFollow").innerText = langData.tiktokFollow;
+        }
+
+        function changeLanguage() {
+            const language = document.getElementById("languageSelect").value;
+            setLanguage(language);
+        }
+    </script>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+            position: relative;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        .social-links {
+            display: flex;
+            justify-content: space-evenly;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .social-links a {
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .social-links a:hover {
+            background-color: #444;
+        }
+        .language-selector {
+            margin-top: 10px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 1rem;
+            background-color: #444;
+        }
+        nav a {
+            color: #fff;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #666;
+        }
+        .hero {
+            height: 50vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: url('https://i.postimg.cc/kgSGMQDZ/IMG-2388.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+        .container {
+            padding: 2rem;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            margin: 1rem;
+            color: #fff;
+        }
+        .gallery {
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 2rem 0;
+        }
+        .gallery img {
+            height: 150px;
+            margin-right: 10px;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+        @keyframes scroll {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .scroll-container {
+            display: inline-block;
+            animation: scroll 30s linear infinite;
+        }
+        .scroll-container:hover {
+            animation-play-state: paused;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+        /* Responsive Styling */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+            .gallery img {
+                height: 100px;
+            }
+            .social-links a {
+                font-size: 0.9rem;
+                padding: 3px 8px;
+            }
+        }
+    </style>
+</head>
+<body onload="setLanguage('en')">
+    <header>
+        <h1 id="tagline">Welcome to ForgeMyMeme!</h1>
+        <div class="social-links">
+            <a href="https://www.instagram.com/forgemymeme/" target="_blank">Instagram</a>
+            <a href="https://www.tiktok.com/@forgemymeme?_t=8rH1PAvjuAi&_r=1" target="_blank">TikTok</a>
+        </div>
+        <div class="language-selector">
+            <label for="languageSelect">Choose Language:</label>
+            <select id="languageSelect" onchange="changeLanguage()">
+                <option value="en">English</option>
+                <option value="de">Deutsch</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+            </select>
+        </div>
+    </header>
+
+    <nav>
+        <a href="#home" id="homeLink">Home</a>
+        <a href="#about" id="aboutLink">About Us</a>
+        <a href="#gallery" id="galleryLink">Gallery</a>
+        <a href="#submit" id="submitLink">Send Request</a>
+        <a href="#contact" id="contactLink">Contact</a>
+    </nav>
+
+    <section class="hero" id="home">
+        <h2 id="welcomeText">Welcome to ForgeMyMeme! The best source for unique and funny memes.</h2>
+    </section>
+
+    <section class="container" id="about">
+        <h2 id="aboutText">About Us</h2>
+        <p>We are a creative team making memes based on current trends and personal ideas. Follow us on Instagram or send us your ideas!</p>
+    </section>
+
+    <section class="container gallery" id="gallery">
+        <h2 id="galleryTitle">Gallery</h2>
+        <div class="scroll-container">
+            <!-- Bildlinks -->
+            <img src="https://i.postimg.cc/qzjD0sXD/IMG-2496.jpg" alt="Image 1">
+            <img src="https://i.postimg.cc/H8t5wtsq/IMG-2573.jpg" alt="Image 2">
+            <img src="https://i.postimg.cc/6y9bDjRG/IMG-2587.jpg" alt="Image 3">
+            <img src="https://i.postimg.cc/sMHYHK9y/IMG-2603.jpg" alt="Image 4">
+            <img src="https://i.postimg.cc/TyyrzmCb/IMG-2608.jpg" alt="Image 5">
+            <img src="https://i.postimg.cc/sQ75XzFD/IMG-2618.jpg" alt="Image 6">
+            <img src="https://i.postimg.cc/Rq1bp53B/IMG-2623.jpg" alt="Image 7">
+            <img src="https://i.postimg.cc/rDwG974Q/IMG-2635.jpg" alt="Image 8">
+            <img src="https://i.postimg.cc/2qQT3nNZ/IMG-2658.jpg" alt="Image 9">
+            <img src="https://i.postimg.cc/fkB2x7t7/IMG-2659.jpg" alt="Image 10">
+            <img src="https://i.postimg.cc/Yh0X84Y5/IMG-2660.jpg" alt="Image 11">
+            <img src="https://i.postimg.cc/K1g0Sd9Q/IMG-2661.jpg" alt="Image 12">
+            <img src="https://i.postimg.cc/Hjpvcvxs/IMG-2662.jpg" alt="Image 13">
+            <img src="https://i.postimg.cc/crzFzscr/IMG-2663.jpg" alt="Image 14">
+            <img src="https://i.postimg.cc/PpM6VY6j/IMG-2664.jpg" alt="Image 15">
+            <img src="https://i.postimg.cc/kRXT0GZt/IMG-2665.jpg" alt="Image 16">
+            <img src="https://i.postimg.cc/MnhrnWch/IMG-2666.jpg" alt="Image 17">
+            <img src="https://i.postimg.cc/gXpSKNHs/IMG-2667.jpg" alt="Image 18">
+            <img src="https://i.postimg.cc/75CWPCL3/IMG-2668.jpg" alt="Image 19">
+            <img src="https://i.postimg.cc/KRpWy7mc/IMG-2669.jpg" alt="Image 20">
+            <img src="https://i.postimg.cc/LqxDz2h9/IMG-2549.jpg" alt="Image 21">
+            <img src="https://i.postimg.cc/rdVg0KVZ/IMG-2633.jpg" alt="Image 22">
+        </div>
+    </section>
+
+    <section class="container form" id="submit">
+        <h2 id="submitTitle">Send Request via Instagram</h2>
+        <p><a href="https://www.instagram.com/forgemymeme/" target="_blank">Send Request via Instagram</a></p>
+    </section>
+
+    <footer id="contact">
+        <p id="footerText">&copy; 2024 ForgeMyMeme.</p>
+    </footer>
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
